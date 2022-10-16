@@ -1,0 +1,584 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "PatientDetails, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/drugs": {
+      "get": {
+        "tags": [
+          "Drugs"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Drug"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Drugs"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Drug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Drug"
+            }
+          }
+        }
+      }
+    },
+    "/api/drugs/{id}": {
+      "get": {
+        "tags": [
+          "Drugs"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Drug"
+            }
+          }
+        }
+      }
+    },
+    "/api/login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Login"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/patientinfo": {
+      "get": {
+        "tags": [
+          "Patientinfo"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PatientInfo"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Patientinfo"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/PatientInfo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PatientInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/patientinfo/{id}": {
+      "get": {
+        "tags": [
+          "Patientinfo"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PatientInfo"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Patientinfo"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/PatientInfo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Patientinfo"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/patientinfo/endpoint": {
+      "post": {
+        "tags": [
+          "Patientinfo"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PatientDetailsODSheet"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/prescription": {
+      "get": {
+        "tags": [
+          "Prescription"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Prescription"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Prescription"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Prescription"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Prescription"
+            }
+          }
+        }
+      }
+    },
+    "/api/prescription/{id}": {
+      "get": {
+        "tags": [
+          "Prescription"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Prescription"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Prescription"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Prescription"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Prescription"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Drug": {
+      "type": "object",
+      "properties": {
+        "drugId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "drugName": {
+          "type": "string"
+        },
+        "drugIDformat": {
+          "type": "string"
+        },
+        "prescriptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Prescription"
+          }
+        }
+      }
+    },
+    "Login": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "roleId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "role": {
+          "$ref": "#/definitions/Role"
+        }
+      }
+    },
+    "PatientDetailsODSheet": {
+      "type": "object",
+      "properties": {
+        "patientName": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "dob": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "drugId": {
+          "type": "string"
+        },
+        "drugName": {
+          "type": "string"
+        }
+      }
+    },
+    "PatientInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "dob": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "emailId": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "statusId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "address": {
+          "type": "string"
+        },
+        "patientName": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/PatientStatus"
+        },
+        "prescriptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Prescription"
+          }
+        }
+      }
+    },
+    "PatientStatus": {
+      "type": "object",
+      "properties": {
+        "statusId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "statusName": {
+          "type": "string"
+        },
+        "patientInfos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PatientInfo"
+          }
+        }
+      }
+    },
+    "Prescription": {
+      "type": "object",
+      "properties": {
+        "preId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "drugId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "patId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "drug": {
+          "$ref": "#/definitions/Drug"
+        },
+        "pat": {
+          "$ref": "#/definitions/PatientInfo"
+        }
+      }
+    },
+    "Role": {
+      "type": "object",
+      "properties": {
+        "roleId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "roleName": {
+          "type": "string"
+        },
+        "logins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Login"
+          }
+        }
+      }
+    }
+  }
+}
